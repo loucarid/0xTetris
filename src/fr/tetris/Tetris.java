@@ -12,54 +12,54 @@ import java.util.Random;
 public class Tetris extends JFrame {
 
     /**
-     * Le JPanel board
+     * JPanel_board
      */
     private Board board;
 
     /**
-     * Le Jpanel SideBar
+     * Jpanel_SideBar
      */
     private SideBar sideBar;
 
     /**
-     * La pièce en cours
+     * Current Piece
      */
     private Piece currentPiece;
 
     /**
-     * La pièce suivant
+     * Piece suivante
      */
     private Piece nextPiece;
 
     /**
-     * La vitesse du jeu
+     * GameSpeed
      */
     private int speed;
 
     /**
-     * Indiquer si le jeu est fini
+     * Fin du jeu
      */
     private boolean gameOver;
 
     /**
-     * Indiquer si le jeu est en pause
+     * Pause
      */
     private boolean pause;
 
     /**
-     * Le score
+     * Score
      */
     private int score;
 
     /**
-     * Le Constructeur du jeu Tetris
      *
-     * On affiche la fenêtre du Tetris
+     * Tetris_constructor
+     *
      */
     public Tetris() {
 
         /**
-         * Paramétrer la fenêtre du Tetris
+         * Set_Tetris_Window
          */
         this.setTitle("Tetris");
         this.getContentPane().setBackground( Color.BLACK);
@@ -70,13 +70,13 @@ public class Tetris extends JFrame {
 
 
         /**
-         * Création et implémentation du Board (JPanel) dans le Tetris (JFrame)
+         * Board : Jpanel to Jframe
          */
         this.board = new Board();
         this.add(this.board, BorderLayout.CENTER);
 
         /**
-         * Création et implémentation du SideBar (JPanel) dans le Tetris (JFrame)
+         * Sidebar : Jpanel to Jframe
          */
         this.sideBar = new SideBar(this);
         this.add(this.sideBar, BorderLayout.EAST);
@@ -86,7 +86,7 @@ public class Tetris extends JFrame {
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
                     /**
-                     * Flèche du haut ou Z : faire tourner la pièce
+                     * Rotate piece
                      */
                     case KeyEvent.VK_Z:
                     case KeyEvent.VK_UP:
@@ -103,7 +103,7 @@ public class Tetris extends JFrame {
                         break;
 
                     /**
-                     * Flèche de gauche ou Q: déplacement à gauche
+                     * Move Left
                      */
                     case KeyEvent.VK_Q:
                     case KeyEvent.VK_LEFT:
@@ -118,7 +118,7 @@ public class Tetris extends JFrame {
                         break;
 
                     /**
-                     * Flèche de droite ou D: déplacement à droite
+                     * Move Right
                      */
                     case KeyEvent.VK_D:
                     case KeyEvent.VK_RIGHT:
@@ -153,14 +153,14 @@ public class Tetris extends JFrame {
 
 
         /**
-         * Afficher le Tetris
+         * Print_Tetris
          */
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
         /**
-         * Lancer
+         * Init_Game
          */
 
         this.initGame();
@@ -168,7 +168,7 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * Lancer le jeu
+     * Launch_Game
      */
     private void run() {
         if (!isPause()) {
@@ -185,9 +185,9 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * Donne une pièce aléatoire
+     * Random_Piece
      *
-     * @return une pièce
+     * @return une pi�ce
      */
     private Piece randomPiece() {
         Random random = new Random();
@@ -213,7 +213,7 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * Mise à jour de l'affichage
+     * Update_screen
      */
     private void updatePrint() {
         if (isGameOver() || isPause()) {
@@ -226,7 +226,7 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * La boucle du jeu
+     * Game_loop
      */
     private void loop() {
 
@@ -245,7 +245,7 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * Initialisation de la partie
+     * Init_Game
      */
     private void initGame() {
         this.board.reset();
@@ -258,7 +258,7 @@ public class Tetris extends JFrame {
     }
 
     /**
-     * Change la pièce avec la suivant
+     * Change_piece
      */
     private void changePiece() {
         this.board.addPiece(this.currentPiece);
@@ -284,56 +284,49 @@ public class Tetris extends JFrame {
         }
     }
 
-    /**
-     * Indique si la partie est finie
-     *
-     * @return Vrai si la partie est finie, Faux sinon
-     */
+	/**
+	 * End_Game
+	 * @return
+	 */
     public boolean isGameOver() {
         return gameOver;
     }
 
     /**
-     * Définir la fin de la partie
-     *
-     * @param gameOver Vrai si la partie est finie, Faux sinon
+     * End_Game
+     * @param gameOver
      */
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
     }
 
     /**
-     * Indique si la partie est en pause
-     *
-     * @return Vrai si la partie est en pause, Faux sinon
+     * Pause ?
      */
     public boolean isPause() {
         return pause;
     }
 
-    /**
-     * Définir si la partie est en pause
-     *
-     * @param pause Vrai si la partie est en pause, Faux sinon
+    /** met en pause
+     * 
+     * @param pause
      */
     public void setPause(boolean pause) {
         this.pause = pause;
     }
 
-    /**
-     * Donne le score actuel
-     *
-     * @return Le score
-     */
+	/**
+	 * Print_score
+	 * @return
+	 */
     public int getScore() {
         return score;
     }
 
-    /**
-     * Donne la pièce suivante
-     *
-     * @return La pièce suivante
-     */
+   /**
+    * Next_piece
+    * @return
+    */
     public Piece getNextPiece() {
         return nextPiece;
     }

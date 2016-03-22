@@ -13,11 +13,11 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Audio Audio = new Audio();
+        //Audio Audio = new Audio();
 
 
 
-        Audio.jouerEnBoucle();
+        //Audio.jouerEnBoucle();
         Tetris tetris = new Tetris();
 
 
