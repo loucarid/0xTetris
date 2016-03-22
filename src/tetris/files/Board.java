@@ -34,7 +34,7 @@ public class Board extends JPanel {
     /**
      * Default_color
      */
-    public static final Color DEFAULT_COLOR = Color.black;
+    public static final Color DEFAULT_COLOR = Color.BLACK;
 
     /**
      * La matrice qui contient les boutons (pour afficher les cases de notre Tetris).
