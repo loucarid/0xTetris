@@ -1,8 +1,8 @@
-package fr.tetris.piece;
-
-import fr.tetris.Tetris;
+package tetris.pieces;
 
 import java.awt.*;
+
+import tetris.files.*;
 
 /**
  * Classe abstraite de laquelle toutes les pièces héritent.
@@ -93,8 +93,8 @@ public abstract class Piece {
 
         this.setPiece(temp);
 
-        if (this.col + this.nbCol > fr.tetris.Board.NB_COL) {
-            this.col = fr.tetris.Board.NB_COL - this.nbCol;
+        if (this.col + this.nbCol > Board.NB_COL) {
+            this.col = Board.NB_COL - this.nbCol;
         }
     }
 

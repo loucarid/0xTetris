@@ -1,4 +1,4 @@
-package fr.tetris.piece;
+package tetris.pieces;
 
 import java.awt.*;
 

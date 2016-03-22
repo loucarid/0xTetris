@@ -1,4 +1,4 @@
-package fr.tetris;
+package tetris.files;
 
 import java.applet.Applet;
 import java.applet.AudioClip;

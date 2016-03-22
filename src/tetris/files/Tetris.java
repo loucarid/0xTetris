@@ -1,8 +1,9 @@
-package fr.tetris;
-
-import fr.tetris.piece.*;
+package tetris.files;
 
 import javax.swing.*;
+
+import tetris.pieces.*;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

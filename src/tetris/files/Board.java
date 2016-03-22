@@ -1,9 +1,10 @@
-package fr.tetris;
-
-import fr.tetris.piece.Piece;
+package tetris.files;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+
+import tetris.pieces.Piece;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -11,17 +12,17 @@ import java.awt.image.BufferedImage;
 public class Board extends JPanel {
 
     /**
-     * Le nombre de lignes de la matrice.
+     * row_mat.
      */
     public static final int NB_LIN = 20;
 
     /**
-     * Le nombre de colonnes de la matrice.
+     * col _mat.
      */
     public static final int NB_COL = 12;
 
     /**
-     * La taille en pixel du côté d'un carreau
+     * Pxl_size
      */
     public static final int COTE_CARREAU = 20;
 
@@ -31,7 +32,7 @@ public class Board extends JPanel {
     public static final int MARGE_CARREAU = 1;
 
     /**
-     * La couleur par défaut des carreaux
+     * Default_color
      */
     public static final Color DEFAULT_COLOR = Color.black;
 

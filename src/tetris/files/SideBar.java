@@ -1,8 +1,9 @@
-package fr.tetris;
-
-import fr.tetris.piece.Piece;
+package tetris.files;
 
 import javax.swing.*;
+
+import tetris.pieces.Piece;
+
 import java.awt.*;
 
 

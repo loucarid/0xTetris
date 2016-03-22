@@ -3,27 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.tetris.piece;
+package tetris.pieces;
 
 import java.awt.*;
 
 /**
- * La pièce S
+ * La pièce Z
  */
-public class PieceS extends Piece {
+public class PieceZ extends Piece {
 
     /**
-     * Constructeur de la Pièce S
+     * Constructeur de la Pièce Z
      */
-    public PieceS() {
+    public PieceZ() {
 
         super();
 
         this.setPiece(new boolean[][]{
-                {false, true, true},
-                {true, true, false}
+                {true, true, false},
+                {false, true, true}
         });
 
-        this.setColor(new Color(4, 228, 255));
+        this.setColor(new Color(199, 4, 255));
     } 
 }
