@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.net.*;
 import javax.swing.*;
 
-public class APropos extends JDialog implements ActionListener {
+public class About extends JDialog implements ActionListener {
 	private Image[] image;
 	private MediaTracker MT;
 	private JButton ivjJButton1;
@@ -21,7 +21,7 @@ public class APropos extends JDialog implements ActionListener {
 	private JLabel ivjJLabel9;
 	static Class class$java$awt$Window;
 
-	public APropos() {
+	public About() {
 		this.ivjJButton1 = null;
 		this.ivjJDialogContentPane = null;
 		this.ivjJLabel1 = null;
@@ -68,7 +68,7 @@ public class APropos extends JDialog implements ActionListener {
 			class_ = class$java$awt$Window;
 			if (class_ == null) {
 				try {
-					class_ = APropos.class$java$awt$Window = Class
+					class_ = About.class$java$awt$Window = Class
 							.forName("java.awt.Window");
 				} catch (ClassNotFoundException v3) {
 					throw new NoClassDefFoundError(v3.getMessage());
@@ -84,7 +84,7 @@ public class APropos extends JDialog implements ActionListener {
 		this.setVisible(true);
 	}
 
-	public APropos(Frame owner) {
+	public About(Frame owner) {
 		super(owner);
 		this.ivjJButton1 = null;
 		this.ivjJDialogContentPane = null;
@@ -100,7 +100,7 @@ public class APropos extends JDialog implements ActionListener {
 		this.ivjJLabel9 = null;
 	}
 
-	public APropos(Frame owner, String title) {
+	public About(Frame owner, String title) {
 		super(owner, title);
 		this.ivjJButton1 = null;
 		this.ivjJDialogContentPane = null;
@@ -116,7 +116,7 @@ public class APropos extends JDialog implements ActionListener {
 		this.ivjJLabel9 = null;
 	}
 
-	public APropos(Frame owner, String title, boolean modal) {
+	public About(Frame owner, String title, boolean modal) {
 		super(owner, title, modal);
 		this.ivjJButton1 = null;
 		this.ivjJDialogContentPane = null;
@@ -132,7 +132,7 @@ public class APropos extends JDialog implements ActionListener {
 		this.ivjJLabel9 = null;
 	}
 
-	public APropos(Frame owner, boolean modal) {
+	public About(Frame owner, boolean modal) {
 		super(owner, modal);
 		this.ivjJButton1 = null;
 		this.ivjJDialogContentPane = null;

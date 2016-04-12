@@ -1,8 +1,8 @@
 /*
  * Decompiled with CFR 0_114.
  */
-public class Barre extends Piece {
-	public Barre(int posX, int posY) {
+public class Stick extends Piece {
+	public Stick(int posX, int posY) {
 		super(posX, posY);
 		this.mat = new Matrix(4);
 		int couleur = (int) (Math.random() * 4.0);

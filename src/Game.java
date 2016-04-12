@@ -140,7 +140,7 @@ public class Game {
 				.size()));
 		switch (numTypePiece) {
 		case 0: {
-			this.suivante = new Carre((int) (Math.random()
+			this.suivante = new Square((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
@@ -155,7 +155,7 @@ public class Game {
 			break;
 		}
 		case 3: {
-			this.suivante = new Barre((int) (Math.random()
+			this.suivante = new Stick((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}

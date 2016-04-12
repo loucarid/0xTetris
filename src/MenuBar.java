@@ -171,7 +171,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		} else if (commande.equals("Editer Nouvelle Pi\u00e8ce")) {
 			new PieceEdit(5, jeu);
 		} else if (commande.equals("A Propos...")) {
-			new APropos();
+			new About();
 		} else if (commande.equals("Aide en Ligne")) {
 			new FrameHelp();
 		}

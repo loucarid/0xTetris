@@ -1,8 +1,8 @@
 /*
  * Decompiled with CFR 0_114.
  */
-public class Carre extends Piece {
-	public Carre(int posX, int posY) {
+public class Square extends Piece {
+	public Square(int posX, int posY) {
 		super(posX, posY);
 		this.mat = new Matrix(2);
 		int couleur = (int) (Math.random() * 4.0);
