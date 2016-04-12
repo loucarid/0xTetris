@@ -282,7 +282,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		this.radioButtonHandicap6.addActionListener(this);
 		this.radioButtonHandicap7.addActionListener(this);
 		this.radioButtonHandicap0.setSelected(true);
-		this.menuOptionsHandicap.setEnabled(false);
+		this.menuOptionsHandicap.setEnabled(true);
 	}
 
 	public void menuOptionsNiveau() {
@@ -318,7 +318,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		this.radioButtonNiveau9.addActionListener(this);
 		this.radioButtonNiveau10.addActionListener(this);
 		this.radioButtonNiveau1.setSelected(true);
-		this.menuOptionsNiveau.setEnabled(false);
+		this.menuOptionsNiveau.setEnabled(true);
 	}
 
 	public void menuPersonnaliser() {
