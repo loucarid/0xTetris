@@ -24,10 +24,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
-/**
- * @author Ange FOFE, Jalil MANKOURI & Andy HARVEL;
- * @version Version 1.0
- */
+
 public class FrameBestScore implements ActionListener {
 	/** Frame d'affichage. */
 	private static JFrame frame;

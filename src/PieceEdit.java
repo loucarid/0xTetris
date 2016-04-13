@@ -10,7 +10,7 @@ import java.awt.event.WindowEvent;
 
 public class PieceEdit extends JPanel implements MouseListener, ActionListener {
 	private Matrix mat;
-	private Game jeu;
+	private Game game;
 	private static JFrame frame;
 	private static PieceEditCanvas canvas;
 	private static JComboBox listColors;
@@ -22,7 +22,7 @@ public class PieceEdit extends JPanel implements MouseListener, ActionListener {
 
 	public PieceEdit(int size, Game jeu) {
 		this.mat = new Matrix(size);
-		this.jeu = jeu;
+		this.game = jeu;
 		try {
 			UIManager.setLookAndFeel(UIManager
 					.getCrossPlatformLookAndFeelClassName());
@@ -98,7 +98,7 @@ public class PieceEdit extends JPanel implements MouseListener, ActionListener {
 			frame.dispose();
 		} else if (e.getActionCommand().equals("Ajouter au jeu")) {
 			frame.dispose();
-			this.jeu.addUserPiece(this.mat);
+			this.game.addUserPiece(this.mat);
 		} else if (e.getActionCommand().equals("TailleMat")) {
 			this.setSizeMat(listTailles.getSelectedIndex() + 1);
 		}

@@ -1,7 +1,5 @@
 
-/*
- * Decompiled with CFR 0_114.
- */
+
 public class Stick extends Piece {
 	public Stick(int posX, int posY) {
 		super(posX, posY);

@@ -40,9 +40,9 @@ public class About extends JDialog implements ActionListener {
 		while (i < 2) {
 			try {
 				this.image[0] = Toolkit.getDefaultToolkit().getImage(
-						new URL("http://www.essi.fr/~buiguez/buiguez.jpg"));
+						new URL("http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
 				this.image[1] = Toolkit.getDefaultToolkit().getImage(
-						new URL("http://www.essi.fr/~buiguez/alamargo.jpg"));
+						new URL("http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
 			} catch (MalformedURLException e) {
 				System.err.println("Probleme de saisie d'images.");
 				e.printStackTrace();

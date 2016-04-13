@@ -1,6 +1,4 @@
-/*
- * Decompiled with CFR 0_114.
- */
+
 import java.awt.Graphics;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -16,7 +14,7 @@ public class Game {
 	private int height;
 	private int[][] mat;
 	private Piece enCours;
-	private Piece suivante;
+	private Piece nextPiece;
 	private int score;
 	private int ligne;
 	private int ligneNiveau;
@@ -40,7 +38,7 @@ public class Game {
 			++i;
 		}
 		this.enCours = null;
-		this.suivante = null;
+		this.nextPiece = null;
 		this.nextPiece();
 		this.nextPiece();
 		this.score = 0;
@@ -111,7 +109,7 @@ public class Game {
 	}
 
 	public Piece getSuivante() {
-		return this.suivante;
+		return this.nextPiece;
 	}
 
 	public boolean isPositionPossible(Piece piece) {
@@ -135,54 +133,54 @@ public class Game {
 	}
 
 	public void nextPiece() {
-		this.enCours = this.suivante;
+		this.enCours = this.nextPiece;
 		int numTypePiece = (int) (Math.random() * (7 + this.userMatrix
 				.size()));
 		switch (numTypePiece) {
 		case 0: {
-			this.suivante = new Square((int) (Math.random()
+			this.nextPiece = new Square((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 1: {
-			this.suivante = new Elle((int) (Math.random()
+			this.nextPiece = new Elle((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 2: {
-			this.suivante = new Esse((int) (Math.random()
+			this.nextPiece = new Esse((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 3: {
-			this.suivante = new Stick((int) (Math.random()
+			this.nextPiece = new Stick((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 4: {
-			this.suivante = new Te((int) (Math.random()
+			this.nextPiece = new Te((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 5: {
-			this.suivante = new EsseInverse((int) (Math.random()
+			this.nextPiece = new EsseInverse((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 6: {
-			this.suivante = new ElleInverse((int) (Math.random()
+			this.nextPiece = new ElleInverse((int) (Math.random()
 					* (this.width - 4) + 2.0), 2);
 			break;
 		}
 		default: {
 			Matrix mat = (Matrix) this.userMatrix.elementAt(numTypePiece - 7);
-			this.suivante = new UserPiece(
+			this.nextPiece = new UserPiece(
 					(int) (Math.random()
 							* (this.width - mat.getSize()) + (mat
 							.getSize() + 1) / 2), (mat.getSize() + 1) / 2, mat);
 		}
 		}
-		this.cps.setPiece(this.suivante);
+		this.cps.setPiece(this.nextPiece);
 	}
 
 	public void nouveauJeu() {
@@ -196,7 +194,7 @@ public class Game {
 			++j;
 		}
 		this.enCours = null;
-		this.suivante = null;
+		this.nextPiece = null;
 		this.nextPiece();
 		this.nextPiece();
 		this.score = 0;

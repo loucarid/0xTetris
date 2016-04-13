@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR 0_114.
- */
 import java.awt.Color;
 
 final class Couleur {

@@ -1,9 +1,10 @@
 import java.awt.*;
 import javax.swing.*;
 public class FrameHelp extends JFrame {
+	HtmlPane html;
 	public FrameHelp() {
 		super("Aide");
-		HtmlPane html;
+		
 		
 		html = new HtmlPane();
 		try {

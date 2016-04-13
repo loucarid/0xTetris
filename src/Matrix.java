@@ -1,6 +1,4 @@
-/*
- * Decompiled with CFR 0_114.
- */
+
 public class Matrix {
 	int size;
 	private int[][] matrice;

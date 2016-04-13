@@ -1,7 +1,4 @@
 
-/*
- * Decompiled with CFR 0_114.
- */
 public class Square extends Piece {
 	public Square(int posX, int posY) {
 		super(posX, posY);
