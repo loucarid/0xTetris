@@ -1,9 +1,14 @@
+package components;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 
 public class Tetris extends JFrame implements KeyListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2598473050933938018L;
 	private JPanel panel;
 	private MenuBar menubar;
 	public JLabel labelApercu;
@@ -11,7 +16,7 @@ public class Tetris extends JFrame implements KeyListener {
 	private JLabel labelLevel;
 	private JLabel labelLigne;
 	private MonCanvas canvas;
-	private CanvasPieceSuivante cps;
+	private NextPiece cps;
 
 	public Tetris() {
 		this.setTitle("Tetris");
@@ -36,7 +41,7 @@ public class Tetris extends JFrame implements KeyListener {
 		this.menubar = new MenuBar(this);
 		this.setJMenuBar(this.menubar);
 		this.addKeyListener(this);
-		this.cps = new CanvasPieceSuivante();
+		this.cps = new NextPiece();
 		this.cps.setBounds(350, 45, 162, 162);
 		this.panel.add((Component) (this.cps));
 		this.canvas = new MonCanvas(this);
@@ -64,14 +69,14 @@ public class Tetris extends JFrame implements KeyListener {
 		this.labelLigne.setBounds(350, 350, 250, 36);
 		this.panel.add(this.labelLigne);
 		this.getContentPane().add(this.panel);
-		this.show();
+		this.setVisible(true);
 	}
 
 	public MonCanvas getCanvas() {
 		return this.canvas;
 	}
 
-	public CanvasPieceSuivante getCps() {
+	public NextPiece getCps() {
 		return this.cps;
 	}
 

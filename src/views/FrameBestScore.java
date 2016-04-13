@@ -1,3 +1,4 @@
+package views;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -36,7 +37,7 @@ public class FrameBestScore implements ActionListener {
 	/** Le nombre de scores enregistres. (entre 0 et 5). */
 	private int nbHightScore;
 	/** Le fichier d'acces du fichier des meilleurs */
-	private final static String nomFichier = "best.txt";
+	private final static String nomFichier = "best-scores.txt";
 	/** La colonne d'insertion d'un nouveau score. */
 	private int colNewScore;
 	/** La ligne d'insertion d'un nouveau score. */

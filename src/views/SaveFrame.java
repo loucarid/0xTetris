@@ -1,9 +1,17 @@
+package views;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+
 import javax.swing.*;
 
+import components.Matrix;
+
 public class SaveFrame extends JPanel implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 203650247124306412L;
 	private Matrix mat;
 	private static JFrame frame;
 	private static JTextField nomFichier;
@@ -46,7 +54,7 @@ public class SaveFrame extends JPanel implements ActionListener {
 		this.add(pan3, "South");
 		frame.getContentPane().add("Center", (Component) (this));
 		frame.pack();
-		frame.show();
+		frame.setVisible(true);
 	}
 
 	@Override

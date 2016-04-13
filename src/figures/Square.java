@@ -1,3 +1,7 @@
+package figures;
+
+import components.Matrix;
+import components.Piece;
 
 public class Square extends Piece {
 	public Square(int posX, int posY) {

@@ -1,3 +1,4 @@
+package components;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +14,6 @@ import javax.swing.UIManager;
 
 /**
  * Frame d'affichage de messages.
- * @author Ange FOFE, Jalil MANKOURI & Andy HARVEL;
- * @version $Revision: 1.0 $
  */
  
 public class JFrameMsg extends JComponent implements ActionListener {

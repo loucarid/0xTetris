@@ -1,7 +1,12 @@
+package views;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+
 import javax.swing.*;
+
+import components.Matrix;
+import components.PieceEdit;
 
 public class LoadFrame extends JPanel implements ActionListener {
 	private Matrix mat;
@@ -47,7 +52,7 @@ public class LoadFrame extends JPanel implements ActionListener {
 		this.add(pan3, "South");
 		frame.getContentPane().add("Center", (Component) (this));
 		frame.pack();
-		frame.show();
+		frame.setVisible(true);
 	}
 
 	@Override

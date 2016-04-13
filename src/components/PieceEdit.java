@@ -1,4 +1,9 @@
+package components;
 import javax.swing.*;
+
+import views.LoadFrame;
+import views.SaveFrame;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -85,7 +90,7 @@ public class PieceEdit extends JPanel implements MouseListener, ActionListener {
 		this.add(pan3, "South");
 		frame.getContentPane().add("Center", (Component) (this));
 		frame.pack();
-		frame.show();
+		frame.setVisible(true);
 	}
 
 	@Override

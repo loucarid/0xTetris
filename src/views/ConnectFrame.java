@@ -1,7 +1,13 @@
+package views;
 import java.awt.*;
 import java.awt.event.*;
 import java.net.Socket;
+
 import javax.swing.*;
+
+import network.Client;
+import components.Game;
+import components.JFrameMsg;
 
 public class ConnectFrame extends JPanel implements ActionListener, Runnable {
 	private Thread thread;
@@ -67,7 +73,7 @@ public class ConnectFrame extends JPanel implements ActionListener, Runnable {
 		this.add(pan3, "South");
 		frame.getContentPane().add("Center", (Component) (this));
 		frame.pack();
-		frame.show();
+		frame.setVisible(true);
 	}
 
 	@Override

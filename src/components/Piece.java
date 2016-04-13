@@ -1,6 +1,8 @@
+package components;
+
 /*
- * Decompiled with CFR 0_114.
- */
+ Definition generale d'une piece du jeu 
+*/
 import java.awt.Graphics;
 
 public class Piece {

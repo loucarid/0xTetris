@@ -1,6 +1,11 @@
+package components;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
+import views.ConnectFrame;
+import views.FrameBestScore;
 
 public class MenuBar extends JMenuBar implements ActionListener {
 	private static int handicap;
@@ -18,7 +23,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	private JMenuItem itemBestScore;
 	private JMenuItem itemEditer;
 	private JMenuItem itemAPropos;
-	private JMenuItem itemAideEnLigne;
 	private JMenuItem itemQuitter;
 	private JSeparator separator1;
 	private JSeparator separator2;
@@ -172,8 +176,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			new PieceEdit(5, jeu);
 		} else if (commande.equals("A Propos...")) {
 			new About();
-		} else if (commande.equals("Aide en Ligne")) {
-			new FrameHelp();
 		}
 	}
 
@@ -184,12 +186,9 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		this.menuAide.setHorizontalTextPosition(0);
 		this.itemAPropos = new JMenuItem("A Propos...");
 		this.separator1 = new JSeparator();
-		this.itemAideEnLigne = new JMenuItem("Aide en Ligne");
 		this.menuAide.add(this.itemAPropos);
 		this.menuAide.add(this.separator1);
-		this.menuAide.add(this.itemAideEnLigne);
 		this.itemAPropos.addActionListener(this);
-		this.itemAideEnLigne.addActionListener(this);
 	}
 
 	public void menuJeu() {

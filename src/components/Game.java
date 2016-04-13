@@ -1,3 +1,4 @@
+package components;
 
 import java.awt.Graphics;
 import java.io.DataInputStream;
@@ -5,6 +6,15 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Vector;
+
+import views.FrameBestScore;
+import figures.Elle;
+import figures.ElleInverse;
+import figures.Esse;
+import figures.EsseInverse;
+import figures.Square;
+import figures.Stick;
+import figures.Te;
 
 public class Game {
 	private Socket socket;
@@ -19,10 +29,10 @@ public class Game {
 	private int ligne;
 	private int ligneNiveau;
 	private int niveau;
-	private CanvasPieceSuivante cps;
+	private NextPiece cps;
 	private Vector userMatrix;
 
-	public Game(int width, int height, CanvasPieceSuivante cps) {
+	public Game(int width, int height, NextPiece cps) {
 		this.width = width;
 		this.height = height;
 		this.cps = cps;

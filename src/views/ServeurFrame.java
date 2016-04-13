@@ -1,18 +1,26 @@
+package views;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.net.Socket;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import network.Serveur;
+
  
 public class ServeurFrame extends JPanel implements ActionListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 231252725555496270L;
 	private static JFrame frame;
 	private ConnectFrame connectFrame;
 	/** Pour le serveur. */
@@ -59,7 +67,7 @@ public ServeurFrame(ConnectFrame connectFrame) {
 	/* Insertion du panel dans la frame et affichage de la frame. */
 	frame.getContentPane().add("Center", this);
 	frame.pack();
-	frame.show();
+	frame.setVisible(true);
 	
 	/* Lancement du serveur. */
 	new Serveur(this);

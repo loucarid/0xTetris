@@ -1,6 +1,9 @@
+package figures;
+import components.Matrix;
+import components.Piece;
 
-/*
- * Decompiled with CFR 0_114.
+/**
+ * Piece de type: frome en 'S' inversee.
  */
 public class EsseInverse extends Piece {
 	public EsseInverse(int posX, int posY) {

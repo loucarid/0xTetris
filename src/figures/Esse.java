@@ -1,8 +1,17 @@
+package figures;
+import components.Matrix;
+import components.Piece;
 
-/*
- * Decompiled with CFR 0_114.
+/**
+ * Constructeur de la piece en 'S'.
+ * @param posX Position X de la piece.
+ * @param posY Position Y de la piece.
  */
 public class Esse extends Piece {
+	/*
+	 * param posX Position X de la piece.
+	 * @param posY Position Y de la piece.
+	 */
 	public Esse(int posX, int posY) {
 		super(posX, posY);
 		this.mat = new Matrix(3);

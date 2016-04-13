@@ -1,3 +1,4 @@
+package components;
 
 
 public class UserPiece extends Piece {

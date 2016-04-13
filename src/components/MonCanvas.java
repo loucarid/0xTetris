@@ -1,3 +1,4 @@
+package components;
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.net.*;
@@ -155,7 +156,7 @@ public class MonCanvas extends JComponent implements Runnable {
 	}
 
 	public void stopThread() {
-		this.thread.suspend();
+		this.thread.interrupt();
 	}
 
 	public void testKey(int code) {

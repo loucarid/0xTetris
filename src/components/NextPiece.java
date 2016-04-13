@@ -1,6 +1,7 @@
+package components;
 import java.awt.*;
 import javax.swing.*;
-public class CanvasPieceSuivante extends JComponent {
+public class NextPiece extends JComponent {
 	Dimension size;
 	Piece suivante;
 
