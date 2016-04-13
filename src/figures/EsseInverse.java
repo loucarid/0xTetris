@@ -1,4 +1,5 @@
 package figures;
+
 import components.Matrix;
 import components.Piece;
 

@@ -1,15 +1,20 @@
 package figures;
+
 import components.Matrix;
 import components.Piece;
 
 /**
  * Constructeur de la piece en 'S'.
- * @param posX Position X de la piece.
- * @param posY Position Y de la piece.
+ * 
+ * @param posX
+ *            Position X de la piece.
+ * @param posY
+ *            Position Y de la piece.
  */
 public class Esse extends Piece {
 	/*
 	 * param posX Position X de la piece.
+	 * 
 	 * @param posY Position Y de la piece.
 	 */
 	public Esse(int posX, int posY) {

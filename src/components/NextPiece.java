@@ -1,6 +1,8 @@
 package components;
+
 import java.awt.*;
 import javax.swing.*;
+
 public class NextPiece extends JComponent {
 	Dimension size;
 	Piece suivante;

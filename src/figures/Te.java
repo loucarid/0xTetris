@@ -1,7 +1,7 @@
 package figures;
+
 import components.Matrix;
 import components.Piece;
-
 
 /*
  * Decompiled with CFR 0_114.

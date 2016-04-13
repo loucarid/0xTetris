@@ -2,7 +2,7 @@ package components;
 
 /*
  Definition generale d'une piece du jeu 
-*/
+ */
 import java.awt.Graphics;
 
 public class Piece {

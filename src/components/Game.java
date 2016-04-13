@@ -144,32 +144,31 @@ public class Game {
 
 	public void nextPiece() {
 		this.enCours = this.nextPiece;
-		int numTypePiece = (int) (Math.random() * (7 + this.userMatrix
-				.size()));
+		int numTypePiece = (int) (Math.random() * (7 + this.userMatrix.size()));
 		switch (numTypePiece) {
 		case 0: {
-			this.nextPiece = new Square((int) (Math.random()
-					* (this.width - 4) + 2.0), 2);
+			this.nextPiece = new Square(
+					(int) (Math.random() * (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 1: {
-			this.nextPiece = new Elle((int) (Math.random()
-					* (this.width - 4) + 2.0), 2);
+			this.nextPiece = new Elle(
+					(int) (Math.random() * (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 2: {
-			this.nextPiece = new Esse((int) (Math.random()
-					* (this.width - 4) + 2.0), 2);
+			this.nextPiece = new Esse(
+					(int) (Math.random() * (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 3: {
-			this.nextPiece = new Stick((int) (Math.random()
-					* (this.width - 4) + 2.0), 2);
+			this.nextPiece = new Stick(
+					(int) (Math.random() * (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 4: {
-			this.nextPiece = new Te((int) (Math.random()
-					* (this.width - 4) + 2.0), 2);
+			this.nextPiece = new Te(
+					(int) (Math.random() * (this.width - 4) + 2.0), 2);
 			break;
 		}
 		case 5: {
@@ -184,10 +183,9 @@ public class Game {
 		}
 		default: {
 			Matrix mat = (Matrix) this.userMatrix.elementAt(numTypePiece - 7);
-			this.nextPiece = new UserPiece(
-					(int) (Math.random()
-							* (this.width - mat.getSize()) + (mat
-							.getSize() + 1) / 2), (mat.getSize() + 1) / 2, mat);
+			this.nextPiece = new UserPiece((int) (Math.random()
+					* (this.width - mat.getSize()) + (mat.getSize() + 1) / 2),
+					(mat.getSize() + 1) / 2, mat);
 		}
 		}
 		this.cps.setPiece(this.nextPiece);
@@ -290,8 +288,7 @@ public class Game {
 		while (j < this.height) {
 			i = 0;
 			while (i < this.width) {
-				int couleur = (int) (Math.random() * Couleur.getSize()
-						* 2.0 - 1.0);
+				int couleur = (int) (Math.random() * Couleur.getSize() * 2.0 - 1.0);
 				this.mat[i][j] = couleur < Couleur.getSize() ? couleur : -1;
 				++i;
 			}

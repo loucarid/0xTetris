@@ -1,9 +1,9 @@
 package network;
+
 import java.io.*;
 import java.net.*;
 
 import views.ServeurFrame;
-
 
 public class Serveur implements Runnable {
 	private ServeurFrame serveurFrame;

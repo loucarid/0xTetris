@@ -1,4 +1,5 @@
 package components;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.Constructor;
@@ -40,10 +41,16 @@ public class About extends JDialog implements ActionListener {
 		int i = 0;
 		while (i < 2) {
 			try {
-				this.image[0] = Toolkit.getDefaultToolkit().getImage(
-						new URL("http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
-				this.image[1] = Toolkit.getDefaultToolkit().getImage(
-						new URL("http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
+				this.image[0] = Toolkit
+						.getDefaultToolkit()
+						.getImage(
+								new URL(
+										"http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
+				this.image[1] = Toolkit
+						.getDefaultToolkit()
+						.getImage(
+								new URL(
+										"http://flylib.com/books/4/126/1/html/2/images/fig126_01.jpg"));
 			} catch (MalformedURLException e) {
 				System.err.println("Probleme de saisie d'images.");
 				e.printStackTrace();
@@ -186,15 +193,13 @@ public class About extends JDialog implements ActionListener {
 				this.ivjJDialogContentPane.setLayout(null);
 				this.ivjJDialogContentPane.setBackground(new Color(189, 211,
 						211));
-				this.getJDialogContentPane().add(
-						this.getJButton1(),
+				this.getJDialogContentPane().add(this.getJButton1(),
 						this.getJButton1().getName());
 				this.getJDialogContentPane().add(this.getJLabel1(),
 						this.getJLabel1().getName());
 				this.getJDialogContentPane().add(this.getJLabel2(),
 						this.getJLabel2().getName());
-				this.getJDialogContentPane().add(
-						this.getJLabel21(),
+				this.getJDialogContentPane().add(this.getJLabel21(),
 						this.getJLabel21().getName());
 				this.getJDialogContentPane().add(this.getJLabel3(),
 						this.getJLabel3().getName());
@@ -241,8 +246,7 @@ public class About extends JDialog implements ActionListener {
 			try {
 				this.ivjJLabel2 = new JLabel();
 				if (this.MT.statusID(0, false) == 8) {
-					this.ivjJLabel2
-							.setIcon(new ImageIcon(this.image[0]));
+					this.ivjJLabel2.setIcon(new ImageIcon(this.image[0]));
 				}
 				this.ivjJLabel2.setBounds(339, 129, 95, 105);
 			} catch (Throwable ivjExc) {
@@ -257,8 +261,7 @@ public class About extends JDialog implements ActionListener {
 			try {
 				this.ivjJLabel21 = new JLabel();
 				if (this.MT.statusID(1, false) == 8) {
-					this.ivjJLabel21
-							.setIcon(new ImageIcon(this.image[1]));
+					this.ivjJLabel21.setIcon(new ImageIcon(this.image[1]));
 				}
 				this.ivjJLabel21.setBounds(100, 129, 90, 105);
 			} catch (Throwable ivjExc) {
@@ -403,6 +406,5 @@ public class About extends JDialog implements ActionListener {
 	public void jButton1_ActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
 	}
-
 
 }

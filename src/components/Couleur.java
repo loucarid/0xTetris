@@ -1,4 +1,5 @@
 package components;
+
 import java.awt.Color;
 
 final class Couleur {

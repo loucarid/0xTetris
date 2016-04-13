@@ -1,8 +1,7 @@
 package figures;
+
 import components.Matrix;
 import components.Piece;
-
-
 
 public class Stick extends Piece {
 	public Stick(int posX, int posY) {
