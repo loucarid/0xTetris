@@ -1,67 +1,92 @@
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.net.Socket;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.net.*;
-
-import javax.swing.*;
-
+ 
 public class ServeurFrame extends JPanel implements ActionListener {
+	
 	private static JFrame frame;
 	private ConnectFrame connectFrame;
+	/** Pour le serveur. */
 	private Thread thread;
-
-	public ServeurFrame(ConnectFrame connectFrame) {
-		this.connectFrame = connectFrame;
-		try {
-			UIManager.setLookAndFeel(UIManager
-					.getCrossPlatformLookAndFeelClassName());
-		} catch (Exception v0) {
-		}
-		frame = new JFrame("Attendre un appel");
-		frame.addWindowListener(new WindowAdapter() {
-
-			@Override
-			public void windowClosing(WindowEvent e) {
-				ServeurFrame.access$frame().dispose();
-			}
-		});
-		this.setLayout(new BorderLayout());
-		JPanel pan1 = new JPanel();
-		pan1.add(new JLabel("Attente d'une connexion en cours..."));
-		this.add(pan1, "Center");
-		JPanel pan2 = new JPanel();
-		JButton buttonAnnuler = new JButton("Annuler");
-		buttonAnnuler.addActionListener(this);
-		pan2.add(buttonAnnuler);
-		this.add(pan2, "South");
-		frame.getContentPane().add("Center", (Component) (this));
-		frame.pack();
-		frame.show();
-		new Serveur(this);
+/**
+ * Constructeur de la Fenetre d'attente de connexion.
+ * param connecFrame La fenetre qui a appele le serveur.
+ */
+ 
+public ServeurFrame(ConnectFrame connectFrame) {
+	super();
+	this.connectFrame = connectFrame;
+	
+	/* Traitement du Look & Feel : L&F Java.*/
+	try {
+		UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+	} catch (Exception error) {
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		String action = e.getActionCommand();
-		if (action.equals("Annuler") && this.thread != null) {
+	
+	frame = new JFrame("Attendre un appel");
+
+	/* Gestion de la fermeture de cette frame. */
+	frame.addWindowListener(new WindowAdapter() {
+		public void windowClosing(WindowEvent e) {
+			frame.dispose(); // On ferme la fenetre
+		}
+	});
+	
+	setLayout(new BorderLayout());
+
+	/* Message au centre.  */
+	JPanel pan1 = new JPanel();
+	pan1.add(new JLabel("Attente d'une connexion en cours..."));
+	add(pan1, "Center");
+
+	/* Bouton au sud. */
+	JPanel pan2 = new JPanel();
+	JButton buttonAnnuler = new JButton("Annuler");
+	buttonAnnuler.addActionListener(this);
+	pan2.add(buttonAnnuler);
+	add(pan2, "South");
+
+	/* Insertion du panel dans la frame et affichage de la frame. */
+	frame.getContentPane().add("Center", this);
+	frame.pack();
+	frame.show();
+	
+	/* Lancement du serveur. */
+	new Serveur(this);
+}
+
+ 
+public void actionPerformed(ActionEvent e) {
+	String action = e.getActionCommand();
+	if (action.equals("Annuler")) {
+		if (thread != null) { 
 			frame.dispose();
-			this.thread.stop();
-			this.connectFrame.setSocket(null);
+			/** On arrête le serveur grâce au thread. */
+			thread.stop(); 
+			/** Pas de connexion. */
+			connectFrame.setSocket(null); 
 		}
 	}
+}
 
-	public void setSocket(Socket socket) {
-		this.connectFrame.setSocket(socket);
-		frame.dispose();
-		this.thread.stop();
-	}
+public void setSocket(Socket socket) {
+	connectFrame.setSocket(socket); 
+	frame.dispose();                            /** Ferme la fenetre. */
+	thread.stop();                                /** Stop le socket. */
+}
 
-	public void setThread(Thread thread) {
-		this.thread = thread;
-	}
-
-	static JFrame access$frame() {
-		return frame;
-	}
-
+ 
+public void setThread(Thread thread) {
+	this.thread = thread;
+}
 }

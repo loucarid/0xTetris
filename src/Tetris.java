@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class Tetris extends JFrame implements KeyListener {
 	private JPanel panel;
-	private MenuBar barreMenu;
+	private MenuBar menubar;
 	public JLabel labelApercu;
 	public JLabel labelScore;
 	private JLabel labelLevel;
@@ -22,20 +22,19 @@ public class Tetris extends JFrame implements KeyListener {
 					.getCrossPlatformLookAndFeelClassName());
 		} catch (Exception v0) {
 		}
-		/*
-		this.addWindowListener(new WindowAdapter(this) {
-			/* synthetic Tetris this$0;
-
+		/* Gestion de la fermeture de cette frame. */
+		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent e) {
-				this.this$0.dispose();
+				dispose(); // On ferme la fenetre.
 				System.exit(1);
 			}
-		});*/
+		});
 		this.panel = new JPanel();
 		this.panel.setBackground(new Color(189, 211, 211));
 		this.panel.setLayout(null);
-		this.barreMenu = new MenuBar(this);
-		this.setJMenuBar(this.barreMenu);
+		this.menubar = new MenuBar(this);
+		this.setJMenuBar(this.menubar);
 		this.addKeyListener(this);
 		this.cps = new CanvasPieceSuivante();
 		this.cps.setBounds(350, 45, 162, 162);
@@ -99,7 +98,7 @@ public class Tetris extends JFrame implements KeyListener {
 	}
 
 	public void setEnabledMenuOptions() {
-		this.barreMenu.setEnabledMenuOptions(true);
+		this.menubar.setEnabledMenuOptions(true);
 	}
 
 	public void setLabelLevel(int level) {

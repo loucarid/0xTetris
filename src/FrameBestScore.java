@@ -280,7 +280,7 @@ public FrameBestScore(int score, int niveau, int ligne) {
 	panel.add(label);
 
 	/* Creation d'un bouton. */
-	JButton boutonOk = new JButton("Ok !!");
+	JButton boutonOk = new JButton("Ok");
 	boutonOk.setBounds(242, 190, 98, 25);
 	panel.add(boutonOk);
 	boutonOk.addActionListener(this);
@@ -321,7 +321,7 @@ public int getLigneNewScore() {
 public void initData() {
 	FileReader fic = null;  // Le fichier de lecture.
 	String sentence;         // La phrase lue dans le fichier.
-
+	BufferedReader br = null;
 	@SuppressWarnings("unused")
 	String f = null;
 	
@@ -339,10 +339,12 @@ public void initData() {
 		}
 	}
 
-	/* On bufferise le flux de lecture. */
-	BufferedReader br = new BufferedReader(fic);
+
 	
-	try { // On essaie de lire une premiere ligne. */
+	try {
+		/* On bufferise le flux de lecture. */
+		br = new BufferedReader(fic);
+		// On essaie de lire une premiere ligne. */
 		sentence = br.readLine();
 	} catch (IOException e) {
 		sentence = null;
@@ -373,14 +375,15 @@ public void initData() {
 public void saveFichier() {
 	FileWriter fw = null;
 	boolean finFichier = false;
-	
+	PrintWriter pw = null;
 	try { // On ouvre le fichier en ecriture.
 		fw = new FileWriter(nomFichier);
+		/* On formate le flux d'ecriture. */
+		pw = new PrintWriter(fw);
 	} catch (IOException e) {
 		System.out.println("Ecriture impossible");
 	}
-	/* On formate le flux d'ecriture. */
-	PrintWriter pw = new PrintWriter(fw);
+
 
 	/* On remplit le fichier. */
 	for (int i = 0; i < 5; i++) {

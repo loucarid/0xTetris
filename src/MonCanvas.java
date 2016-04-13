@@ -6,7 +6,7 @@ import javax.swing.*;
 public class MonCanvas extends JComponent implements Runnable {
 	private Image[] image;
 	private MediaTracker MT;
-	private Game jeu;
+	private Game game;
 	private int timer;
 	private Thread thread;
 	private Piece suivante;
@@ -14,7 +14,7 @@ public class MonCanvas extends JComponent implements Runnable {
 	private int niveau;
 
 	public MonCanvas(Tetris tetris) {
-		this.jeu = null;
+		this.game = null;
 		this.tetris = tetris;
 		this.image = new Image[10];
 		this.MT = new MediaTracker((Component) (this));
@@ -87,12 +87,12 @@ public class MonCanvas extends JComponent implements Runnable {
 		}
 		this.niveau = 1;
 		this.timer = 1000;
-		this.jeu = new Game(12, 20, tetris.getCps());
+		this.game = new Game(12, 20, tetris.getCps());
 		this.start();
 	}
 
 	public Game getJeu() {
-		return this.jeu;
+		return this.game;
 	}
 
 	@Override
@@ -113,7 +113,7 @@ public class MonCanvas extends JComponent implements Runnable {
 		}
 		g.setColor(Color.black);
 		g.drawRect(0, 0, 289, 481);
-		this.jeu.draw(g);
+		this.game.draw(g);
 	}
 
 	@Override
@@ -123,14 +123,14 @@ public class MonCanvas extends JComponent implements Runnable {
 				Thread.sleep(this.timer);
 			} catch (InterruptedException v0) {
 			}
-			if (!this.jeu.play()) {
-				this.jeu.testScore();
+			if (!this.game.play()) {
+				this.game.testScore();
 				this.tetris.setEnabledMenuOptions();
 				this.thread.suspend();
 			}
-			this.tetris.setLabelScore(this.jeu.getScore());
-			this.tetris.setLabelLigne(this.jeu.getLigne());
-			int nouveauNiveau = this.jeu.getNiveau();
+			this.tetris.setLabelScore(this.game.getScore());
+			this.tetris.setLabelLigne(this.game.getLigne());
+			int nouveauNiveau = this.game.getNiveau();
 			this.tetris.setLabelLevel(nouveauNiveau);
 			if (nouveauNiveau != this.niveau) {
 				this.timer = (int) (1000.0 * Math.pow(0.6666666865348816,
@@ -142,7 +142,7 @@ public class MonCanvas extends JComponent implements Runnable {
 	}
 
 	public void setJeu(Game jeu) {
-		this.jeu = jeu;
+		this.game = jeu;
 	}
 
 	public void start() {
@@ -159,7 +159,7 @@ public class MonCanvas extends JComponent implements Runnable {
 	}
 
 	public void testKey(int code) {
-		this.jeu.testKey(code);
+		this.game.testKey(code);
 		this.repaint();
 	}
 
